@@ -1,0 +1,8 @@
+﻿
+<h2>Guests:</h2>
+<ul>
+<% @guests.each do |guest| %>
+  <li><%= guest.name %></li>
+<% end %>
+</ul>
+<%= link_to 'Change', guests_path %>
