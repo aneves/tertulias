@@ -1,5 +1,11 @@
 Tertulia::Application.routes.draw do
   resources :guests
+  resources :home
+  
+  namespace :admin do
+    root :to => 'users#index'
+    resources :users
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -14,9 +20,6 @@ Tertulia::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  
-  resources :guests
-  resources :home
 
   # Sample resource route with options:
   #   resources :products do
