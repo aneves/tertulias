@@ -1,6 +1,8 @@
 Tertulia::Application.routes.draw do
   resources :guests
-  resources :home
+  
+  match 'home' => 'home#index'
+  match 'login' => 'home#login'
   
   namespace :admin do
     root :to => 'users#index'

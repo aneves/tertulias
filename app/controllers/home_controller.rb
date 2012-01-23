@@ -8,4 +8,8 @@ class HomeController < ApplicationController
       format.json { render json: @guests }
     end
   end
+  
+  def login
+	@user = User.new
+  end
 end
