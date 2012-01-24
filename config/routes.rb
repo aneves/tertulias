@@ -1,5 +1,7 @@
 Tertulia::Application.routes.draw do
+
   resources :guests
+  resources :contributions
   
   match 'home' => 'home#index'
   match 'login' => 'home#login'

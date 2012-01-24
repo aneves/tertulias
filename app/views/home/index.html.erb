@@ -6,3 +6,12 @@
 <% end %>
 </ul>
 <%= link_to 'Change', guests_path %>
+
+<h2>Contributions:</h2>
+<ul>
+<% @contribs.each do |contrib| %>
+  <li><%= contrib.name %> (<%= contrib.user_login %>)</li>
+<% end %>
+</ul>
+<%= link_to 'Change', contributions_path %>
+

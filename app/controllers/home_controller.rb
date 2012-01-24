@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   # GET /home
   def index
     @guests = Guest.all
+    @contribs = Contribution.all
 
     respond_to do |format|
       format.html # index.html.erb
