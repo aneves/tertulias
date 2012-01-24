@@ -1,5 +1,7 @@
 Tertulia::Application.routes.draw do
 
+  resources :comments
+
   resources :guests
   resources :contributions
   

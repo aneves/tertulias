@@ -15,3 +15,11 @@
 </ul>
 <%= link_to 'Change', contributions_path %>
 
+
+<h2>Comments:</h2>
+<ul>
+<% @comments.each do |comment| %>
+  <li><%= comment.date %>: <%= comment.title %> <p><%= comment.description %></p></li>
+<% end %>
+</ul>
+<%= link_to 'Change', comments_path %>
