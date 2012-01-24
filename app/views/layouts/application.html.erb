@@ -8,13 +8,16 @@
 </head>
 <body>
 
+<div id="menu">
+	<% if @current_user %>
+		<%= link_to 'Admin', :admin_root %>
+	<% else %>
+		<%= link_to 'Login', :login %>
+	<% end %>
+</div>
+
 <h1><%= link_to 'Tertúlia', :root %></h1>
 
-<% if @current_user %>
-	<%= link_to 'Admin', :admin_root %>
-<% else %>
-	<%= link_to 'Login', :login %>
-<% end %>
 
 <%= yield %>
 

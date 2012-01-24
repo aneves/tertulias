@@ -5,3 +5,13 @@
  *= require_self
  *= require_tree . 
 */
+#menu {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+#menu a {
+	border: dashed 1px grey;
+	border-radius: 3px;
+	padding: 2px 5px;
+}

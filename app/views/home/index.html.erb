@@ -1,25 +1,30 @@
 ﻿
-<h2>Guests:</h2>
-<ul>
-<% @guests.each do |guest| %>
-  <li><%= guest.name %></li>
-<% end %>
-</ul>
-<%= link_to 'Change', guests_path %>
+<div id="guests">
+	<h2><%= pluralize @guests.count, 'guest' %>:</h2>
+	<ul>
+	<% @guests.each do |guest| %>
+	  <li><%= guest.name %></li>
+	<% end %>
+	</ul>
+	<%= link_to 'Change', guests_path %>
+</div>
 
-<h2>Contributions:</h2>
-<ul>
-<% @contribs.each do |contrib| %>
-  <li><%= contrib.name %> (<%= contrib.user_login %>)</li>
-<% end %>
-</ul>
-<%= link_to 'Change', contributions_path %>
+<div id="contributions">
+	<h2><%= pluralize @contributions.count, 'contribution' %>:</h2>
+	<ul>
+	<% @contributions.each do |contrib| %>
+	  <li><%= contrib.name %> (<%= contrib.user_login %>)</li>
+	<% end %>
+	</ul>
+	<%= link_to 'Change', contributions_path %>
+</div>
 
-
-<h2>Comments:</h2>
-<ul>
-<% @comments.each do |comment| %>
-  <li><%= comment.date %>: <%= comment.title %> <p><%= comment.description %></p></li>
-<% end %>
-</ul>
-<%= link_to 'Change', comments_path %>
+<div id="comments">
+	<h2><%= pluralize @comments.count, 'comment' %>:</h2>
+	<ul>
+	<% @comments.each do |comment| %>
+	  <li><%= comment.date %>: <%= comment.title %> <p><%= comment.description %></p></li>
+	<% end %>
+	</ul>
+	<%= link_to 'Change', comments_path %>
+</div>

@@ -1,0 +1,20 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#guests {
+}
+#guests,
+#contributions {
+	margin-bottom: 20px;
+	width: 49%;
+	float: left;
+}
+#contributions {
+	border-left: dashed 1px grey;
+	padding-left: 1%;
+}
+#comments {
+	clear: both;
+	border-top: dashed 1px grey;
+}

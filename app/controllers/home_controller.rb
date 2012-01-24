@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   # GET /home
   def index
     @guests = Guest.all
-    @contribs = Contribution.all
+    @contributions = Contribution.all
     @comments = Comment.all
 
     respond_to do |format|
