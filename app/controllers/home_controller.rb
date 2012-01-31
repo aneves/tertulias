@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     @guests = Guest.all
     @contributions = Contribution.all
-    @comments = Comment.all
+    @comments = Comment.limit 5
 
     respond_to do |format|
       format.html # index.html.erb
