@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Tertulia</title>
+  <title>Tertúlia</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,13 +9,21 @@
 <body>
 
 <div id="menu">
-	[menu]
+	<% if user_signed_in? %>
+		<%= current_user.email %> <%= link_to 'sign out', destroy_user_session_path, :method => :delete %>
+	<% else %>
+		<%= link_to 'sign in', new_user_session_path %>
+		or
+		<%= link_to 'sign up', new_user_registration_path %>
+	<% end %>
 </div>
 
 <h1><%= link_to 'Tertúlia', :root %></h1>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div id="messages">
+	<%= "<p class='notice'>#{notice}</p>".html_safe if notice %>
+	<%= "<p class='alert'>#{alert}</p>".html_safe if alert %>
+</div>
 
 <%= yield %>
 
