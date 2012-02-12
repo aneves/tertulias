@@ -1,17 +1,10 @@
 Tertulia::Application.routes.draw do
 
   resources :comments
-
   resources :guests
   resources :contributions
   
   match 'home' => 'home#index'
-  match 'login' => 'home#login'
-  
-  namespace :admin do
-    root :to => 'users#index'
-    resources :users
-  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
