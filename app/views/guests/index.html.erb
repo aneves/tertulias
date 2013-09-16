@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Coming</th>
+    <th>Registered by</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= guest.name %></td>
     <td><%= guest.coming %></td>
+    <td><%= guest.user.email %></td>
     <td><%= link_to 'Show', guest %></td>
     <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
     <td><%= link_to 'Destroy', guest, confirm: 'Are you sure?', method: :delete %></td>

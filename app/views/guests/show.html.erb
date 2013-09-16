@@ -10,6 +10,11 @@
   <%= @guest.coming %>
 </p>
 
+<p>
+  <b>Registered by:</b>
+  <%= @guest.user.email %>
+</p>
+
 
 <%= link_to 'Edit', edit_guest_path(@guest) %> |
 <%= link_to 'Back', guests_path %>

@@ -3,7 +3,7 @@
 	<h2><%= pluralize @guests.count, 'guest' %>:</h2>
 	<ul>
 	<% @guests.each do |guest| %>
-	  <li><%= guest.name %></li>
+	  <li><%= guest.name %> <small>(<%= guest.user.email %>)</small></li>
 	<% end %>
 	</ul>
 	<%= link_to 'Change', guests_path %>

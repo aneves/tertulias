@@ -41,6 +41,7 @@ class GuestsController < ApplicationController
   # POST /guests.json
   def create
     @guest = Guest.new(params[:guest])
+	@guest.user = current_user
 
     respond_to do |format|
       if @guest.save

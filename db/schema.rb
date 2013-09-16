@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120212225001) do
+ActiveRecord::Schema.define(:version => 20120213005000) do
 
   create_table "comments", :force => true do |t|
     t.datetime "date"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(:version => 20120212225001) do
   create_table "guests", :force => true do |t|
     t.string   "name"
     t.boolean  "coming"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id",    :limit => 255, :default => 0, :null => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

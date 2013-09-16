@@ -19,6 +19,9 @@
     <%= f.label :coming %><br />
     <%= f.check_box :coming %>
   </div>
+  <div class="field">
+    <%= f.label :registered_by %> <strong><%= current_user.email %></strong>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
