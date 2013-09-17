@@ -16,7 +16,7 @@
 	<h2><%= pluralize @contributions.count, 'contribution' %>:</h2>
 	<ul>
 	<% @contributions.each do |contrib| %>
-	  <li><%= contrib.name %> (<%= contrib.user.name %>)</li>
+	  <li><%= contrib.name %> (<%= contrib.contribution_type.name %> &ndash; <%= contrib.user.name %>)</li>
 	<% end %>
 	</ul>
 	<ul class="options">

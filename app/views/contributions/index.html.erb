@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Type</th>
     <th>User</th>
     <th></th>
     <th></th>
@@ -12,6 +13,7 @@
 <% @contributions.each do |contribution| %>
   <tr>
     <td><%= contribution.name %></td>
+    <td><%= contribution.contribution_type.name %></td>
     <td><%= contribution.user.name %></td>
     <td><%= link_to 'Show', contribution %></td>
     <td><%= link_to 'Edit', edit_contribution_path(contribution) %></td>
