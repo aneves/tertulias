@@ -13,7 +13,7 @@
 
 <% @comments.each do |comment| %>
   <tr>
-    <td><%= comment.date %></td>
+    <td><%= l comment.date, format: :long %></td>
     <td><%= comment.user.name %></td>
     <td><%= comment.title %></td>
     <td><%= comment.description %></td>

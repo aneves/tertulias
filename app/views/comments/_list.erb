@@ -2,7 +2,7 @@
 <ul>
 <% comments.each do |comment| %>
 	<li>
-		<%= comment.title %> <small>(<%= comment.user.name %> @ <%= comment.date %>)</small>: 
+		<%= comment.title %> <small>(<%= comment.user.name %> &mdash; <%= l comment.date, format: :long %>)</small>: 
 		<ul class='options'>
 			<li><%= link_to 'Show', comment %></li>
 			<li><%= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %></li>
