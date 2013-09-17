@@ -1,15 +1,14 @@
 <h2>Last <%= pluralize @comments.count, 'comment' %>:</h2>
+
 <ul>
-<% comments.each do |comment| %>
+<% @comments.each do |comment| %>
 	<li>
 		<%= comment.title %> <small>(<%= comment.user.name %> &mdash; <%= l comment.date, format: :long %>)</small>: 
 		<ul class='options'>
-			<li><%= link_to 'Show', comment %>
-			<li><%= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %>
+			<!--<li>< %= link_to 'Edit', edit_comment_path, comment %>
+			<li>< %= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %>-->
 		</ul>
 		<p class="description"><%= comment.description %></p>
 	</li>
 <% end %>
 </ul>
-
-<%= link_to 'New Comment', new_comment_path %>

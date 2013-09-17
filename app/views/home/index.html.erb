@@ -1,5 +1,5 @@
 ﻿
-<div id="guests">
+<section id="guests">
 	<h2><%= pluralize @guests.count, 'guest' %>:</h2>
 	<ul>
 	<% @guests.each do |guest| %>
@@ -10,9 +10,9 @@
 		<li><%= link_to 'Add new', new_guest_path %>
 		<li><%= link_to 'Change', guests_path %>
 	</ul>
-</div>
+</section>
 
-<div id="contributions">
+<section id="contributions">
 	<h2><%= pluralize @contributions.count, 'contribution' %>:</h2>
 	<ul>
 	<% @contributions.each do |contrib| %>
@@ -23,8 +23,11 @@
 		<li><%= link_to 'Add new', new_contribution_path %>
 		<li><%= link_to 'Change', contributions_path %>
 	</ul>
-</div>
+</section>
 
-<div id="comments">
-	<%= render :partial => "comments/list", :locals => {:comments => @comments} %>
-</div>
+<section id="comments">
+	<%= render :partial => "comments/list" %>
+
+	<h3>Add comment</h3>
+	<%= render :partial => "comments/mini_form" %>
+</section>

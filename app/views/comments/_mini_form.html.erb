@@ -1,0 +1,12 @@
+<%= form_for(@new_comment) do |f| %>
+  <div class="field">
+    <%= f.label :title %>:
+    <%= f.text_field :title, :required => '' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :description, cols: 60, rows: 5, placeholder: "description" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add comment" %>
+  </div>
+<% end %>

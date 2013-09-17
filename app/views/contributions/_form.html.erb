@@ -20,9 +20,6 @@
     <% all_types = ContributionType.all.collect {|t| [ t.name, t.id ] } %>
     <%= f.select :contribution_type_id, all_types %>
   </div>
-  <div class="field">
-    <%= f.label :registered_by %> <strong><%= current_user.name %></strong>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

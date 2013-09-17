@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   def index
     @guests = Guest.all
     @contributions = Contribution.all
-    @comments = Comment.find(:all, :order => "created_at desc", :limit => 5)
+    @comments = Comment.latest
+    @new_comment = Comment.new
 
     respond_to do |format|
       format.html # index.html.erb
