@@ -4,8 +4,8 @@
 	<li>
 		<%= comment.title %> <small>(<%= comment.user.name %> &mdash; <%= l comment.date, format: :long %>)</small>: 
 		<ul class='options'>
-			<li><%= link_to 'Show', comment %></li>
-			<li><%= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %></li>
+			<li><%= link_to 'Show', comment %>
+			<li><%= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %>
 		</ul>
 		<p class="description"><%= comment.description %></p>
 	</li>

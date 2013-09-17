@@ -6,7 +6,10 @@
 	  <li><%= guest.name %> <small>(<%= guest.user.name %>)</small></li>
 	<% end %>
 	</ul>
-	<%= link_to 'Change', guests_path %>
+	<ul class="options">
+		<li><%= link_to 'Add new', new_guest_path %>
+		<li><%= link_to 'Change', guests_path %>
+	</ul>
 </div>
 
 <div id="contributions">
@@ -16,7 +19,10 @@
 	  <li><%= contrib.name %> (<%= contrib.user.name %>)</li>
 	<% end %>
 	</ul>
-	<%= link_to 'Change', contributions_path %>
+	<ul class="options">
+		<li><%= link_to 'Add new', new_contribution_path %>
+		<li><%= link_to 'Change', contributions_path %>
+	</ul>
 </div>
 
 <div id="comments">
