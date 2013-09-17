@@ -1,6 +1,7 @@
 class AddUserToGuests < ActiveRecord::Migration
   def self.up
-	add_column :guests, :user_id, :integer, :null => false
+	add_column    :guests, :user_id, :integer
+	change_column :guests, :user_id, :integer, :null => false #SQLite
   end
   
   def self.down

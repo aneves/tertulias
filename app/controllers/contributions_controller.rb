@@ -25,6 +25,7 @@ class ContributionsController < ApplicationController
   # GET /contributions/new.json
   def new
     @contribution = Contribution.new
+    @contribution.user = current_user
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +42,7 @@ class ContributionsController < ApplicationController
   # POST /contributions.json
   def create
     @contribution = Contribution.new(params[:contribution])
+    @contribution.user = current_user
 
     respond_to do |format|
       if @contribution.save

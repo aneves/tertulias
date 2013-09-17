@@ -3,7 +3,7 @@
 	<h2><%= pluralize @guests.count, 'guest' %>:</h2>
 	<ul>
 	<% @guests.each do |guest| %>
-	  <li><%= guest.name %> <small>(<%= guest.user.email %>)</small></li>
+	  <li><%= guest.name %> <small>(<%= guest.user.name %>)</small></li>
 	<% end %>
 	</ul>
 	<%= link_to 'Change', guests_path %>
@@ -13,7 +13,7 @@
 	<h2><%= pluralize @contributions.count, 'contribution' %>:</h2>
 	<ul>
 	<% @contributions.each do |contrib| %>
-	  <li><%= contrib.name %> (<%= contrib.user_login %>)</li>
+	  <li><%= contrib.name %> (<%= contrib.user.name %>)</li>
 	<% end %>
 	</ul>
 	<%= link_to 'Change', contributions_path %>

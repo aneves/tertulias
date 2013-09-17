@@ -12,16 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_login %><br />
-    <%= f.text_field :user_login %>
-  </div>
-  <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :registered_by %> <strong><%= current_user.name %></strong>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -25,6 +25,7 @@ class GuestsController < ApplicationController
   # GET /guests/new.json
   def new
     @guest = Guest.new
+    @guest.user = current_user
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +42,7 @@ class GuestsController < ApplicationController
   # POST /guests.json
   def create
     @guest = Guest.new(params[:guest])
-	@guest.user = current_user
+	  @guest.user = current_user
 
     respond_to do |format|
       if @guest.save
