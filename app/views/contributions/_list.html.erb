@@ -1,0 +1,21 @@
+<h2><%= pluralize @contributions.count, 'contribution' %>:</h2>
+<table>
+	<thead><tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th>User</th>
+	</tr></thead>
+	<tbody>
+	<% @contributions.each do |contrib| %>
+		<tr style="background-color: <%= contrib.contribution_type.colour %>;">
+			<td><%= contrib.name %></td>
+			<td><%= contrib.contribution_type.name %></td>
+			<td><%= contrib.user.name %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+<ul class="options">
+	<li><%= link_to 'Add new', new_contribution_path %>
+	<li><%= link_to 'Change', contributions_path %>
+</ul>

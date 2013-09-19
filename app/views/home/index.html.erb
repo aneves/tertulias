@@ -13,16 +13,7 @@
 </section>
 
 <section id="contributions">
-	<h2><%= pluralize @contributions.count, 'contribution' %>:</h2>
-	<ul>
-	<% @contributions.each do |contrib| %>
-	  <li><%= contrib.name %> (<%= contrib.contribution_type.name %> &ndash; <%= contrib.user.name %>)</li>
-	<% end %>
-	</ul>
-	<ul class="options">
-		<li><%= link_to 'Add new', new_contribution_path %>
-		<li><%= link_to 'Change', contributions_path %>
-	</ul>
+	<%= render :partial => "contributions/list" %>
 </section>
 
 <section id="comments">

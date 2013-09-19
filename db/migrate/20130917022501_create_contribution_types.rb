@@ -5,8 +5,8 @@ class CreateContributionTypes < ActiveRecord::Migration
     end
     say 'Creating default ContributionType.'
     default = ContributionType.new(:name => "default")
-	default.save!
-	id = default.id
+    default.save!
+    id = default.id
     add_column :contributions, :contribution_type_id, :int, :null => false, :default => id
   end
   
