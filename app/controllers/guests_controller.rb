@@ -26,7 +26,6 @@ class GuestsController < ApplicationController
   def new
     @guest = Guest.new
     @guest.user = current_user
-    @guest.coming = true
 
     respond_to do |format|
       format.html # new.html.erb
