@@ -1,0 +1,22 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+.collapsable>:first-child {
+    cursor: pointer;
+}
+.collapsable>*:first-child::before {
+    /* http://www.famfamfam.com/lab/icons/silk/ */
+    content: image-url("magnifier_zoom_out.png");
+    margin-right: 3px;
+    padding: 2px;
+}
+.collapsable.collapsed>*:first-child::before {
+    content: url("/assets/magnifier_zoom_in.png");
+}
+.collapsed>*+* {
+    display: none;
+}

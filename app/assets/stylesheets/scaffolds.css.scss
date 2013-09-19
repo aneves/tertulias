@@ -69,3 +69,39 @@ ul.options {
     border-left: dotted 1px grey;
   }
 }
+#menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+#menu a {
+  border: dashed 1px grey;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
+#messages>* {
+    background-color: #F0F0EE;
+    border: 2px solid #D3DBC5;
+  padding: 1em;
+}
+#messages>*+* {
+    margin-top: 10px;
+}
+
+#messages .notice {/*
+    background-color: #F0F0EE;
+    border-color: #D3DBC5;
+}
+#messages .success {*/
+    background-color: #DFF2BF;
+    border-color: #4F8A10;
+}
+#messages .warning {
+    background-color: #FEEFB3;
+    border-color: #9F6000;
+}
+#messages .alert {
+    background-color: #FFCACA;
+    border-color: #D8000C;
+}
