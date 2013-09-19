@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     @comments = Comment.latest
     @new_comment = Comment.new
     @new_guest = Guest.new
+    @new_contribution = Contribution.new
 
     respond_to do |format|
       format.html # index.html.erb

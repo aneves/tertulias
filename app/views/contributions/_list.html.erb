@@ -15,7 +15,21 @@
 	<% end %>
 	</tbody>
 </table>
-<ul class="options">
-	<li><%= link_to 'Add new', new_contribution_path %>
-	<li><%= link_to 'Change', contributions_path %>
-</ul>
+
+<section class="collapsable collapsed">
+  <h3>Add contribution</h3>
+  <%= form_for(@new_contribution) do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :contribution_type %>
+      <% all_types = ContributionType.all.collect {|t| [ t.name, t.id ] } %>
+      <%= f.select :contribution_type_id, all_types %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</section>
