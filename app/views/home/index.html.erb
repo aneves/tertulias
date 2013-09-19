@@ -1,24 +1,12 @@
 ﻿
 <section id="guests">
-	<h2><%= pluralize @guests.count, 'guest' %>:</h2>
-	<ul>
-	<% @guests.each do |guest| %>
-	  <li><%= guest.name %> <small>(<%= guest.user.name %>)</small></li>
-	<% end %>
-	</ul>
-	<ul class="options">
-		<li><%= link_to 'Add new', new_guest_path %>
-		<li><%= link_to 'Change', guests_path %>
-	</ul>
+  <%= render :partial => "guests/list" %>
 </section>
 
 <section id="contributions">
-	<%= render :partial => "contributions/list" %>
+  <%= render :partial => "contributions/list" %>
 </section>
 
 <section id="comments">
-	<%= render :partial => "comments/list" %>
-
-	<h3>Add comment</h3>
-	<%= render :partial => "comments/mini_form" %>
+  <%= render :partial => "comments/list" %>
 </section>

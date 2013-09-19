@@ -1,0 +1,10 @@
+<h2><%= pluralize @guests.count, 'guest' %>:</h2>
+<ul>
+<% @guests.each do |guest| %>
+  <li><%= guest.name %> <small>(<%= guest.user.name %>)</small></li>
+<% end %>
+</ul>
+<ul class="options">
+  <li><%= link_to 'Add new', new_guest_path %>
+  <li><%= link_to 'Change', guests_path %>
+</ul>
