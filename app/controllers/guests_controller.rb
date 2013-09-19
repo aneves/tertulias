@@ -10,6 +10,26 @@ class GuestsController < ApplicationController
     end
   end
 
+  def confirm
+    guest = Guest.find(params[:id])
+    guest.coming = true
+
+    if(guest.save)
+    then  redirect_to :root, notice: 'Guest was confirmed.' 
+    else  redirect_to :root, notice: 'Error confirming guest.' 
+    end
+  end
+
+  def cancel
+    guest = Guest.find(params[:id])
+    guest.coming = false
+
+    if(guest.save)
+    then  redirect_to :root, notice: 'Guest cancelled.' 
+    else  redirect_to :root, notice: 'Error cancelling guest.' 
+    end
+  end
+
   # GET /guests/1
   # GET /guests/1.json
   def show

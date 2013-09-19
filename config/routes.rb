@@ -3,7 +3,12 @@ Tertulia::Application.routes.draw do
   devise_for :users
 
   resources :comments
-  resources :guests
+  resources :guests do
+    member do
+      get 'confirm'
+      get 'cancel'
+    end
+  end
   resources :contributions
   
   match 'home' => 'home#index'

@@ -1,7 +1,12 @@
 <h2><%= pluralize @guests.count, 'guest' %>:</h2>
 <ul>
 <% @guests.each do |guest| %>
-  <li><%= guest.name %> <small>(<%= guest.user.name %>)</small></li>
+  <li<%= " class='cancelled'" if guest.coming? %>><%= guest.name %> <small>(<%= guest.user.name %>)</small> <%= 
+    if guest.coming?
+    then link_to(image_tag('cancel.png'), cancel_guest_path(guest))
+    else link_to(image_tag('accept.png'), confirm_guest_path(guest))
+    end
+    %></li>
 <% end %>
 </ul>
 

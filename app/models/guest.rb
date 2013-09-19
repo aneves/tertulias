@@ -7,6 +7,7 @@ class Guest < ActiveRecord::Base
 
   private
     def set_default_values
-      self.coming ||= true
+      return unless new_record?
+      self.coming = true if self.coming.nil?
     end
 end
