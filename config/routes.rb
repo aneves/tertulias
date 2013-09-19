@@ -10,6 +10,7 @@ Tertulia::Application.routes.draw do
     end
   end
   resources :contributions
+  resources :contribution_types
   
   match 'home' => 'home#index'
 

@@ -23,6 +23,11 @@ a {
     color: #fff;
     background-color: #000; } }
 
+*::before,
+*::after {
+  vertical-align: middle;
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px; } }

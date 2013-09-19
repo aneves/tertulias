@@ -7,6 +7,7 @@
     <%= f.label :contribution_type %>
     <% all_types = ContributionType.all.collect {|t| [ t.name, t.id ] } %>
     <%= f.select :contribution_type_id, all_types %>
+    <%= link_to 'new type', new_contribution_type_path, :class => 'add' %>
   </div>
   <div class="actions">
     <%= f.submit %>
