@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @event.name %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%= @event.when %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @event.owner_id %>
+</p>
+
+
+<section id="guests">
+  <%= render :partial => "guests/list" %>
+</section>
+
+<section id="contributions">
+  <%= render :partial => "contributions/list" %>
+</section>
+
+<section id="comments">
+  <%= render :partial => "comments/list" %>
+</section>

@@ -1,18 +1,23 @@
 Tertulia::Application.routes.draw do
 
   devise_for :users
-
-  resources :comments
-  resources :guests do
+  resources :events do
     member do
-      get 'confirm'
-      get 'cancel'
+      get 'next'
     end
-  end
-  resources :contributions
-  resources :contribution_types
+
+    resources :comments
+    resources :guests do
+      member do
+        get 'confirm'
+        get 'cancel'
+      end
+    end
+    resources :contributions
+    resources :contribution_types
   
-  match 'home' => 'home#index'
+  end
+  match 'home' => 'events#next'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -63,7 +68,7 @@ Tertulia::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'events#index'
 
   # See how all your routes lay out with "rake routes"
 
