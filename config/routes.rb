@@ -1,4 +1,4 @@
-Tertulia::Application.routes.draw do
+Tertulias::Application.routes.draw do
 
   devise_for :users
   resources :events do

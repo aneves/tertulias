@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Tertulia::Application.load_tasks
+Tertulias::Application.load_tasks
