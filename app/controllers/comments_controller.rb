@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to :root, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.event, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html {

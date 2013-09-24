@@ -2,6 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', :root %>
+<%= link_to 'Back', @event %>
 
 <%= render :partial => "comments/list", :locals => {:comments => @comments} %>

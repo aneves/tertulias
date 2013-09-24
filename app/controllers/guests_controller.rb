@@ -15,8 +15,8 @@ class GuestsController < ApplicationController
     guest.coming = true
 
     if(guest.save)
-    then  redirect_to :root, notice: 'Guest was confirmed.' 
-    else  redirect_to :root, notice: 'Error confirming guest.' 
+    then  redirect_to guest.event, notice: 'Guest was confirmed.'
+    else  redirect_to  guest.event, notice: 'Error confirming guest.' 
     end
   end
 
@@ -25,8 +25,8 @@ class GuestsController < ApplicationController
     guest.coming = false
 
     if(guest.save)
-    then  redirect_to :root, notice: 'Guest cancelled.' 
-    else  redirect_to :root, notice: 'Error cancelling guest.' 
+    then  redirect_to  guest.event, notice: 'Guest cancelled.' 
+    else  redirect_to  guest.event, notice: 'Error cancelling guest.' 
     end
   end
 
@@ -63,10 +63,11 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(params[:guest])
 	  @guest.user = current_user
+    @guest.event_id = params[:event_id]
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to :root, notice: 'Guest was successfully created.' }
+        format.html { redirect_to  @guest.event, notice: 'Guest was successfully created.' }
         format.json { render json: @guest, status: :created, location: @guest }
       else
         format.html { render action: "new" }

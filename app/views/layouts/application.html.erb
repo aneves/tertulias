@@ -18,7 +18,20 @@
 	<% end %>
 </div>
 
-<h1><%= link_to 'Tertúlia', :root %></h1>
+<h1>Tertúlias</h1>
+
+<% if user_signed_in? %>
+<nav>
+Existing events:
+<ul>
+	<% id = params[:id].to_i
+		Event.all.each do |e| %>
+		<li<%= " class='selected'" if e.id == id %>>
+			<%= link_to e.name, e %>
+	<% end %>
+</ul>
+</nav>
+<% end %>
 
 <div id="messages">
 	<%= "<p class='notice'>#{notice}</p>".html_safe if notice %>

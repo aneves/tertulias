@@ -3,7 +3,7 @@
   <%= render :partial => "comments/mini_form" %>
 </section>
 
-<h2>Last <%= pluralize @comments.count, 'comment' %>:</h2>
+<h2><%= pluralize @comments.count, 'comment' %>:</h2>
 <ul>
 <% @comments.each do |comment| %>
 	<li>

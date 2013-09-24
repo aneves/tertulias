@@ -1,6 +1,6 @@
 <h1>New resource type</h1>
 
-<%= form_for(@contribution_type) do |f| %>
+<%= form_for([@event, @contribution_type]) do |f| %>
   <% if @contribution_type.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contribution_type.errors.count, "error") %> prohibited this resource type from being saved:</h2>
@@ -27,4 +27,4 @@
 <% end %>
 
 
-<%= link_to 'Back', :root %>
+<%= link_to 'Back', event_path(params[:event_id]) %>

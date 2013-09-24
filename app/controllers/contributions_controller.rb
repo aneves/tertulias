@@ -43,10 +43,11 @@ class ContributionsController < ApplicationController
   def create
     @contribution = Contribution.new(params[:contribution])
     @contribution.user = current_user
+    @contribution.event_id = params[:event_id]
 
     respond_to do |format|
       if @contribution.save
-        format.html { redirect_to :root, notice: 'Contribution was successfully created.' }
+        format.html { redirect_to @contribution.event, notice: 'Contribution was successfully created.' }
         format.json { render json: @contribution, status: :created, location: @contribution }
       else
         format.html { render action: "new" }
