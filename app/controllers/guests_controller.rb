@@ -12,6 +12,7 @@ class GuestsController < ApplicationController
 
   def confirm
     guest = Guest.find(params[:id])
+    guest.belongs_to! current_user
     guest.coming = true
 
     if(guest.save)
@@ -22,6 +23,7 @@ class GuestsController < ApplicationController
 
   def cancel
     guest = Guest.find(params[:id])
+    guest.belongs_to! current_user
     guest.coming = false
 
     if(guest.save)

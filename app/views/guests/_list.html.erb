@@ -2,9 +2,11 @@
 <ul>
 <% @guests.each do |guest| %>
   <li<%= " class='cancelled'" if !guest.coming? %>><%= guest.name %> <small>(<%= guest.user.name %>)</small> <%= 
-    if guest.coming?
-    then link_to(image_tag('cancel.png'), cancel_event_guest_path(@event, guest))
-    else link_to(image_tag('accept.png'), confirm_event_guest_path(@event, guest))
+    if guest.belongs_to? current_user
+      if guest.coming?
+        then link_to(image_tag('cancel.png'), cancel_event_guest_path(@event, guest))
+        else link_to(image_tag('accept.png'), confirm_event_guest_path(@event, guest))
+      end
     end
     %></li>
 <% end %>
