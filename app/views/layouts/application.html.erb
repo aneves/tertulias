@@ -29,6 +29,7 @@ Existing events:
 		<li<%= " class='selected'" if e.id == id %>>
 			<%= link_to e.name, e %>
 	<% end %>
+	<li><%= link_to 'Add new event', new_event_path, class: :add %>
 </ul>
 </nav>
 <% end %>
