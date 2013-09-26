@@ -1,6 +1,7 @@
 <h2><%= pluralize @guests.count, 'guest' %>:</h2>
 <ul>
 <% @guests.each do |guest| %>
+  <% next if !guest.coming?() && !guest.belongs_to?(current_user) %>
   <li<%= " class='cancelled'" if !guest.coming? %>><%= guest.name %> <small>(<%= guest.user.name %>)</small> <%= 
     if guest.belongs_to? current_user
       if guest.coming?

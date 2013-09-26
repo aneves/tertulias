@@ -8,6 +8,7 @@
 	</tr></thead>
 	<tbody>
 	<% @contributions.each do |contrib| %>
+		<% next if contrib.removed?() && !contrib.belongs_to?(current_user) %>
 		<tr<%= " class='cancelled'" if contrib.removed? %>>
 			<td><%= contrib.name %></td>
 			<td style="background-color: <%= contrib.contribution_type.colour %>;"><%= contrib.contribution_type.name %></td>
