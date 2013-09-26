@@ -23,6 +23,9 @@
 .cancelled {
 	text-decoration: line-through;
 }
+tr.cancelled {
+    background-color: lightgray;
+}
 a.add::before {
     content: url("/assets/add.png");
     margin-right: 3px;

@@ -10,6 +10,28 @@ class ContributionsController < ApplicationController
     end
   end
 
+  def confirm
+    contrib = Contribution.find(params[:id])
+    contrib.belongs_to! current_user
+    contrib.removed = false
+
+    if(contrib.save)
+    then  redirect_to contrib.event, notice: 'contribution was confirmed.'
+    else  redirect_to  contrib.event, notice: 'Error confirming contribution.' 
+    end
+  end
+
+  def cancel
+    contrib = Contribution.find(params[:id])
+    contrib.belongs_to! current_user
+    contrib.removed = true
+
+    if(contrib.save)
+    then  redirect_to  contrib.event, notice: 'Contribution cancelled.' 
+    else  redirect_to  contrib.event, notice: 'Error cancelling contribution.' 
+    end
+  end
+
   # GET /contributions/1
   # GET /contributions/1.json
   def show

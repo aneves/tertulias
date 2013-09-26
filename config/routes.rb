@@ -14,7 +14,12 @@ Tertulias::Application.routes.draw do
         get 'cancel'
       end
     end
-    resources :contributions
+    resources :contributions do
+      member do
+        get 'confirm'
+        get 'cancel'
+      end
+    end
   end
 
   # The priority is based upon order of creation:

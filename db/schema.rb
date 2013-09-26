@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924061347) do
+ActiveRecord::Schema.define(:version => 20130926114540) do
 
   create_table "comments", :force => true do |t|
     t.datetime "date"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130924061347) do
     t.integer  "user_id",                             :null => false
     t.integer  "contribution_type_id", :default => 1, :null => false
     t.integer  "event_id",                            :null => false
+    t.boolean  "removed"
   end
 
   create_table "events", :force => true do |t|
