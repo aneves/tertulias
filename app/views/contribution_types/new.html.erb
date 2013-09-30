@@ -1,17 +1,7 @@
 <h1>New resource type</h1>
 
 <%= form_for([@event, @contribution_type]) do |f| %>
-  <% if @contribution_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contribution_type.errors.count, "error") %> prohibited this resource type from being saved:</h2>
-
-      <ul>
-      <% @contribution_type.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/error_messages', :object => @contribution_type %>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -22,9 +12,9 @@
     <%= f.text_field :colour %>
   </div>
   <div class="actions">
-    <%= f.submit "Create" %>
+    <%= f.submit t("tert.Create") %>
   </div>
 <% end %>
 
 
-<%= link_to 'Back', event_path(params[:event_id]) %>
+<%= link_to t('Back'), event_path(params[:event_id]) %>

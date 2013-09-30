@@ -1,0 +1,9 @@
+<% return unless object.errors.any? %>
+<div id="error_explanation">
+  <h2><%= t 'tert.model_errors', :count => object.errors.count, :model => object.class.model_name.human %></h2>
+  <ul>
+  <% object.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
