@@ -9,6 +9,13 @@
 </p>
 
 
+<% if @event.belongs_to? current_user %>
+<ul class='options'>
+	<li><%= link_to t(:Edit), edit_event_path(@event), class: :edit %>
+</ul>
+<% end %>
+
+
 <section id="guests">
   <%= render :partial => "guests/list" %>
 </section>

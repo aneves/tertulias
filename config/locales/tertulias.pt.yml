@@ -50,6 +50,8 @@ pt:
       Cancelled: Convidado cancelado.
       CancelFailed: Erro ao cancelar convidado.
   Back: Voltar
+  Edit: Editar
+  Edit_x: 'Editar %{model}'
   sign_in: iniciar sessão
   sign_up: inscrever-se
   sign_out: fechar sessão
@@ -57,6 +59,7 @@ pt:
   created_x:
     male: '%{model} foi criado com sucesso.'
     female: '%{model} foi criada com sucesso.'
+  updated_x: '%{model} foi atualizado com sucesso.'
 #  examples:
 #    messages:
 #      not_saved:

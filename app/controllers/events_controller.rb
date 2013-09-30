@@ -49,11 +49,6 @@ class EventsController < ApplicationController
     end
   end
 
-  # GET /events/1/edit
-  def edit
-    @event = Event.find(params[:id])
-  end
-
   # POST /events
   # POST /events.json
   def create
@@ -66,6 +61,30 @@ class EventsController < ApplicationController
         format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # GET /events/1/edit
+  def edit
+    @event = Event.find(params[:id])
+    @event.belongs_to! current_user
+  end
+
+  # PUT /events/1
+  # PUT /events/1.json
+  def update
+    @event = Event.find(params[:id])
+    @event.belongs_to! current_user
+
+    respond_to do |format|
+      if @event.update_attributes(params[:event])
+        msg = t :updated_x, model: Event.model_name.human
+        format.html { redirect_to @event, notice: msg }
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end

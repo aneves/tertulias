@@ -1,0 +1,5 @@
+<h1><%= t 'Edit_x', model: @event.class.model_name.human %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t(:Back), event_path(@event) %>
