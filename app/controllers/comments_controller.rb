@@ -4,8 +4,6 @@ class CommentsController < ApplicationController
   # GET /comments/new.json
   def new
     @comment = Comment.new
-    # TODO: useless field, I should just use "c.updated_at".
-	  @comment.date = DateTime.now
     @comment.user = current_user
 
     respond_to do |format|
@@ -18,8 +16,8 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
-	  @comment.date = DateTime.now
     @comment.user = current_user
+    @comment.event_id = params[:event_id]
 
     respond_to do |format|
       if @comment.save
