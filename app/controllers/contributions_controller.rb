@@ -16,8 +16,8 @@ class ContributionsController < ApplicationController
     contrib.removed = false
 
     if(contrib.save)
-    then  redirect_to contrib.event, notice: 'contribution was confirmed.'
-    else  redirect_to  contrib.event, notice: 'Error confirming contribution.' 
+    then  redirect_to contrib.event, notice: t('tert.contribution.Confirmed')
+    else  redirect_to  contrib.event, notice: t('tert.contribution.ConfirmFailed')
     end
   end
 
@@ -27,8 +27,8 @@ class ContributionsController < ApplicationController
     contrib.removed = true
 
     if(contrib.save)
-    then  redirect_to  contrib.event, notice: 'Contribution cancelled.' 
-    else  redirect_to  contrib.event, notice: 'Error cancelling contribution.' 
+    then  redirect_to  contrib.event, notice: t('tert.contribution.Cancelled')
+    else  redirect_to  contrib.event, notice: t('tert.contribution.CancelFailed')
     end
   end
 
@@ -69,40 +69,13 @@ class ContributionsController < ApplicationController
 
     respond_to do |format|
       if @contribution.save
-        format.html { redirect_to @contribution.event, notice: 'Contribution was successfully created.' }
+        msg = t('created_x.female', model: Contribution.model_name.human)
+        format.html { redirect_to @contribution.event, notice: msg }
         format.json { render json: @contribution, status: :created, location: @contribution }
       else
         format.html { render action: "new" }
         format.json { render json: @contribution.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PUT /contributions/1
-  # PUT /contributions/1.json
-  def update
-    @contribution = Contribution.find(params[:id])
-
-    respond_to do |format|
-      if @contribution.update_attributes(params[:contribution])
-        format.html { redirect_to @contribution, notice: 'Contribution was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @contribution.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /contributions/1
-  # DELETE /contributions/1.json
-  def destroy
-    @contribution = Contribution.find(params[:id])
-    @contribution.destroy
-
-    respond_to do |format|
-      format.html { redirect_to contributions_url }
-      format.json { head :ok }
     end
   end
 end

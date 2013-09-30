@@ -17,7 +17,8 @@ class ContributionTypesController < ApplicationController
 
     respond_to do |format|
       if @contribution_type.save
-        format.html { redirect_to event_path(params[:event_id]), notice: 'Contribution type was successfully created.' }
+        msg = t('created_x.male', model: ContributionType.model_name.human)
+        format.html { redirect_to event_path(params[:event_id]), notice: msg }
         format.json { render json: @contribution_type, status: :created, location: @contribution_type }
       else
         format.html { render action: "new" }

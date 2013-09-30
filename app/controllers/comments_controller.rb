@@ -21,7 +21,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment.event, notice: 'Comment was successfully created.' }
+        msg = t('created_x.male', model: Comment.model_name.human)
+        format.html { redirect_to @comment.event, notice: msg }
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html {

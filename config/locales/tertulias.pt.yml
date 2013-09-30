@@ -38,12 +38,25 @@ pt:
     model_errors:
       one: "1 erro impediu este %{model} de ser gravado:"
       other: "%{count} erros impediram este %{model} de ser gravado:"
-    Existing_events: "Existing events:"
+    Existing_events: "Eventos existentes:"
+    contribution:
+      Confirmed: Multa confirmada.
+      ConfirmFailed: Erro ao confirmar multa.
+      Cancelled: Multa cancelada.
+      CancelFailed: Erro ao cancelar multa.
+    guest:
+      Confirmed: Convidado confirmado.
+      ConfirmFailed: Erro ao confirmar convidado.
+      Cancelled: Convidado cancelado.
+      CancelFailed: Erro ao cancelar convidado.
   Back: Voltar
   sign_in: iniciar sessão
   sign_up: inscrever-se
   sign_out: fechar sessão
   or: ou
+  created_x:
+    male: '%{model} foi criado com sucesso.'
+    female: '%{model} foi criada com sucesso.'
 #  examples:
 #    messages:
 #      not_saved:

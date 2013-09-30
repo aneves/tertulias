@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     event = Event.first
     if event != nil
       then redirect_to event
-    else redirect_to events_path
+    else redirect_to new_event_path
     end
   end
 
@@ -61,40 +61,13 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        msg = t('created_x.male', model: Event.model_name.human)
+        format.html { redirect_to @event, notice: msg }
         format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PUT /events/1
-  # PUT /events/1.json
-  def update
-    @event = Event.find(params[:id])
-
-    respond_to do |format|
-      if @event.update_attributes(params[:event])
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /events/1
-  # DELETE /events/1.json
-  def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
-
-    respond_to do |format|
-      format.html { redirect_to events_url }
-      format.json { head :ok }
     end
   end
 end

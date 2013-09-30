@@ -16,8 +16,8 @@ class GuestsController < ApplicationController
     guest.coming = true
 
     if(guest.save)
-    then  redirect_to guest.event, notice: 'Guest was confirmed.'
-    else  redirect_to  guest.event, notice: 'Error confirming guest.' 
+    then  redirect_to guest.event, notice: t('tert.guest.Confirmed')
+    else  redirect_to  guest.event, notice: t('tert.guest.ConfirmFailed')
     end
   end
 
@@ -27,8 +27,8 @@ class GuestsController < ApplicationController
     guest.coming = false
 
     if(guest.save)
-    then  redirect_to  guest.event, notice: 'Guest cancelled.' 
-    else  redirect_to  guest.event, notice: 'Error cancelling guest.' 
+    then  redirect_to  guest.event, notice: t('tert.guest.Cancelled')
+    else  redirect_to  guest.event, notice: t('tert.guest.CancelFailed')
     end
   end
 
@@ -53,11 +53,6 @@ class GuestsController < ApplicationController
       format.html # new.html.erb
       format.json { render json: @guest }
     end
-  end
-
-  # GET /guests/1/edit
-  def edit
-    @guest = Guest.find(params[:id])
   end
 
   # POST /guests
@@ -91,18 +86,6 @@ class GuestsController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @guest.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /guests/1
-  # DELETE /guests/1.json
-  def destroy
-    @guest = Guest.find(params[:id])
-    @guest.destroy
-
-    respond_to do |format|
-      format.html { redirect_to guests_url }
-      format.json { head :ok }
     end
   end
 end
