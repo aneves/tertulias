@@ -8,12 +8,8 @@
 <!-- TODO: sort by date DESC. -->
 <!-- TODO: why do these datetimes seem to be in CET? -->
 <% @comments.each do |comment| %>
-	<li>
-		<%= comment.title %> <small>(<%= comment.user.name %> &mdash; <%= l comment.updated_at, format: :long %>)</small>: 
-		<!-- TODO <ul class='options'>
-			<li>< %= link_to 'Edit', edit_comment_path, comment %>
-			<li>< %= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %>
-		</ul>-->
+	<li id='comment-<%= comment.id %>'>
+		<%= comment.title %> <small>(<%= comment.user.name %> &mdash; <%= l comment.updated_at, format: :long %>)</small><% next unless comment.description? %>:
 		<p class="description"><%= comment.description %></p>
 	</li>
 <% end %>

@@ -26,7 +26,17 @@
 tr.cancelled {
     background-color: lightgray;
 }
+tr:hover {
+    background-color: #DFF2BF;
+}
+tr.cancelled:hover {
+    background-color: #FFCACA;
+}
 a.add::before {
     content: url("/assets/add.png");
+    margin-right: 3px;
+}
+a.edit::before {
+    content: url("/assets/pencil.png");
     margin-right: 3px;
 }
