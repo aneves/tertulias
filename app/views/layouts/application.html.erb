@@ -10,26 +10,26 @@
 
 <div id="menu">
 	<% if user_signed_in? %>
-		<%= current_user.name %> <%= link_to 'sign out', destroy_user_session_path, :method => :delete %>
+		<%= current_user.name %> <%= link_to t(:sign_out), destroy_user_session_path, :method => :delete %>
 	<% else %>
-		<%= link_to 'sign in', new_user_session_path %>
-		or
-		<%= link_to 'sign up', new_user_registration_path %>
+		<%= link_to t(:sign_in), new_user_session_path %>
+		<%= t :or %>
+		<%= link_to t(:sign_up), new_user_registration_path %>
 	<% end %>
 </div>
 
-<h1>Tertúlias</h1>
+<h1><%= t 'tert.title' %></h1>
 
 <% if user_signed_in? %>
 <nav>
-Existing events:
+<%= t "tert.Existing_events" %>
 <ul>
 	<% id = params[:id].to_i
 		Event.all.each do |e| %>
 		<li<%= " class='selected'" if e.id == id %>>
 			<%= link_to e.name, e %>
 	<% end %>
-	<li><%= link_to 'Add new event', new_event_path, class: :add %>
+	<li><%= link_to t('tert.add_x', :model => Event.model_name.human), new_event_path, class: :add %>
 </ul>
 </nav>
 <% end %>

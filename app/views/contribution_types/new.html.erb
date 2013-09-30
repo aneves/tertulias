@@ -1,4 +1,4 @@
-<h1>New resource type</h1>
+<h1><%= t 'tert.new_x', model: ContributionType.model_name.human %></h1>
 
 <%= form_for([@event, @contribution_type]) do |f| %>
   <%= render 'shared/error_messages', :object => @contribution_type %>

@@ -1,15 +1,15 @@
 <section class="collapsable collapsed">
-  <h3>Add comment</h3>
+  <h3><%= t 'tert.add_x', :model => Comment.model_name.human%></h3>
   <%= render :partial => "comments/mini_form" %>
 </section>
 
-<h2><%= pluralize @comments.count, 'comment' %>:</h2>
+<h2><%= pluralize @comments.count, Comment.model_name.human %>:</h2>
 <ul>
 <% @comments.each do |comment| %>
 	<li>
 		<%= comment.title %> <small>(<%= comment.user.name %> &mdash; <%= l comment.date, format: :long %>)</small>: 
 		<ul class='options'>
-			<!--<li>< %= link_to 'Edit', edit_comment_path, comment %>
+			<!-- TODO <li>< %= link_to 'Edit', edit_comment_path, comment %>
 			<li>< %= link_to 'Destroy', comment, confirm: 'Are you sure?', method: :delete %>-->
 		</ul>
 		<p class="description"><%= comment.description %></p>

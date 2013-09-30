@@ -1,9 +1,9 @@
-<h2><%= pluralize @contributions.count, 'contribution' %>:</h2>
+<h2><%= pluralize @contributions.count, Contribution.model_name.human %>:</h2>
 <table>
 	<thead><tr>
-		<th>Name</th>
-		<th>Type</th>
-		<th>User</th>
+		<th><%= Contribution.human_attribute_name :name %></th>
+		<th><%= Contribution.human_attribute_name :contribution_type %></th>
+		<th><%= Contribution.human_attribute_name :user %></th>
 		<th></th>
 	</tr></thead>
 	<tbody>
@@ -27,6 +27,6 @@
 </table>
 
 <section class="collapsable collapsed">
-  <h3>Add contribution</h3>
+  <h3><%= t 'tert.add_x', :model => Contribution.model_name.human%></h3>
   <%= render :partial => "contributions/mini_form" %>
 </section>

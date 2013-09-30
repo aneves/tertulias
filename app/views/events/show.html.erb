@@ -1,10 +1,10 @@
 <p>
-  <b>When:</b>
+  <b><%= Event.human_attribute_name 'when' %>:</b>
   <%= @event.when %>
 </p>
 
 <p>
-  <b>Owner:</b>
+  <b><%= Event.human_attribute_name 'owner' %>:</b>
   <%= @event.owner.name %>
 </p>
 

@@ -1,4 +1,4 @@
-<h2><%= pluralize @guests.count, 'guest' %>:</h2>
+<h2><%= pluralize @guests.count, Guest.model_name.human %>:</h2>
 <ul>
 <% @guests.each do |guest| %>
   <% next if !guest.coming?() && !guest.belongs_to?(current_user) %>
@@ -14,14 +14,14 @@
 </ul>
 
 <section class="collapsable collapsed">
-  <h3>Add guest</h3>
+  <h3><%= t 'tert.add_x', :model => Guest.model_name.human%></h3>
   <%= form_for([@event, @new_guest]) do |f| %>
     <div class="field">
-      <%= f.label :name %>
+      <%= f.label :name %>:
       <%= f.text_field :name %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit t('tert.add') %>
     </div>
   <% end %>
 </section>
