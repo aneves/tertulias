@@ -35,6 +35,7 @@ pt:
     add_x: Adicionar %{model}
     new_x: Novo %{model}
     Create: Criar
+    AdminsOnly: 'Esta área é reservada a admins.'
     model_errors:
       one: "1 erro impediu este %{model} de ser gravado:"
       other: "%{count} erros impediram este %{model} de ser gravado:"
@@ -60,6 +61,8 @@ pt:
     male: '%{model} foi criado com sucesso.'
     female: '%{model} foi criada com sucesso.'
   updated_x: '%{model} foi atualizado com sucesso.'
+  'true': sim
+  'false': não
 #  examples:
 #    messages:
 #      not_saved:

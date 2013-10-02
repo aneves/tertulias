@@ -2,6 +2,7 @@ Tertulias::Application.routes.draw do
 
   devise_for :users
   resources :contribution_types
+  match 'users' => 'users#index'
   resources :events do
     member do
       get 'next'

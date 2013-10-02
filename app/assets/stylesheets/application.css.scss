@@ -32,6 +32,11 @@ tr:hover {
 tr.cancelled:hover {
     background-color: #FFCACA;
 }
+tr.highlight,
+td.highlight {
+    background-color: #DFF2BF;
+}
+
 a.add::before {
     content: url("/assets/add.png");
     margin-right: 3px;
