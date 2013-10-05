@@ -4,10 +4,21 @@
 </p>
 
 <p>
+  <b><%= Event.human_attribute_name 'location' %>:</b>
+  <%= @event.location %>
+</p>
+
+<p>
   <b><%= Event.human_attribute_name 'owner' %>:</b>
   <%= @event.owner.name %>
 </p>
 
+<% if @event.description.present? %>
+<p>
+  <b><%= Event.human_attribute_name 'description' %>:</b>
+  <div class="description"><%= @event.description %></div>
+</p>
+<% end %>
 
 <% if @event.belongs_to? current_user %>
 <ul class='options'>
