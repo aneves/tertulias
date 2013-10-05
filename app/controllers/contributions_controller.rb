@@ -24,9 +24,8 @@ class ContributionsController < ApplicationController
   def cancel
     contrib = Contribution.find(params[:id])
     contrib.belongs_to! current_user
-    contrib.removed = true
 
-    if(contrib.save)
+    if(contrib.destroy)
     then  redirect_to  contrib.event, notice: t('tert.contribution.Cancelled')
     else  redirect_to  contrib.event, notice: t('tert.contribution.CancelFailed')
     end

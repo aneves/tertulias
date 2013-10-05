@@ -5,6 +5,7 @@ class Contribution < ActiveRecord::Base
 
   validates_presence_of :name
   validates_uniqueness_of :name
+  validates_presence_of :contribution_type
 
   def belongs_to? someone
     return true if user == nil

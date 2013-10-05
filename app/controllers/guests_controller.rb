@@ -24,9 +24,8 @@ class GuestsController < ApplicationController
   def cancel
     guest = Guest.find(params[:id])
     guest.belongs_to! current_user
-    guest.coming = false
 
-    if(guest.save)
+    if(guest.destroy)
     then  redirect_to  guest.event, notice: t('tert.guest.Cancelled')
     else  redirect_to  guest.event, notice: t('tert.guest.CancelFailed')
     end
