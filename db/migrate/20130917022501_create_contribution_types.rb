@@ -3,11 +3,7 @@ class CreateContributionTypes < ActiveRecord::Migration
     create_table :contribution_types do |t|
       t.string :name
     end
-    say 'Creating default ContributionType.'
-    default = ContributionType.new(:name => "default")
-    default.save!
-    id = default.id
-    add_column :contributions, :contribution_type_id, :int, :null => false, :default => id
+    add_column :contributions, :contribution_type_id, :int, :null => false
   end
   
   def self.down
