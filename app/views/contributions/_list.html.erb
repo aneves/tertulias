@@ -13,14 +13,13 @@
 			<td><%= contrib.name %></td>
 			<td style="background-color: <%= contrib.contribution_type.colour %>;"><%= contrib.contribution_type.name %></td>
 			<td><%= contrib.user.name %></td>
-			<td><%= 
-			if contrib.belongs_to? current_user
-			  if contrib.removed?
-			    then link_to(image_tag('accept.png'), confirm_event_contribution_path(@event, contrib))
-			    else link_to(image_tag('cancel.png'), cancel_event_contribution_path(@event, contrib))
-			  end
-			end
-			%></td>
+			<td><% if contrib.belongs_to? current_user %>
+					<%= link_to image_tag('pencil.png', alt: t(:edit)), edit_event_contribution_path(@event, contrib) %>
+					<%= if contrib.removed?
+					    then link_to(image_tag('accept.png'), confirm_event_contribution_path(@event, contrib))
+					    else link_to(image_tag('cancel.png'), cancel_event_contribution_path(@event, contrib), :confirm => t('tert.ConfirmDelete_x.female', model: Contribution.model_name.human))
+					  end %>
+				<% end %></td>
 		</tr>
 	<% end %>
 	</tbody>

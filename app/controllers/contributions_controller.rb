@@ -55,11 +55,6 @@ class ContributionsController < ApplicationController
     end
   end
 
-  # GET /contributions/1/edit
-  def edit
-    @contribution = Contribution.find(params[:id])
-  end
-
   # POST /contributions
   # POST /contributions.json
   def create
@@ -75,6 +70,29 @@ class ContributionsController < ApplicationController
       else
         @event = Event.find params[:event_id]
         format.html { render action: "new" }
+        format.json { render json: @contribution.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def edit
+    @contribution = Contribution.find params[:id]
+    @contribution.belongs_to! current_user
+    @event = Event.find params[:event_id]
+  end
+
+  def update
+    @contribution = Contribution.find(params[:id])
+    @contribution.belongs_to! current_user
+    @event = Event.find params[:event_id]
+
+    respond_to do |format|
+      if @contribution.update_attributes(params[:contribution])
+        msg = t :updated_x, model: Contribution.model_name.human
+        format.html { redirect_to event_path(@event), notice: msg }
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
         format.json { render json: @contribution.errors, status: :unprocessable_entity }
       end
     end

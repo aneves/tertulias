@@ -57,6 +57,9 @@ pt:
       ConfirmFailed: Erro ao confirmar convidado.
       Cancelled: Convidado cancelado.
       CancelFailed: Erro ao cancelar convidado.
+    ConfirmDelete_x:
+      male: Tem a certeza que deseja cancelar este %{model}?
+      female: Tem a certeza que deseja cancelar esta %{model}?
   Back: Voltar
   Edit: Editar
   edit: editar
