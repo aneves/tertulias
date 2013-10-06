@@ -5,6 +5,8 @@
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.plural /a$/, 'as'
   inflect.singular /as$/, 'a'
+  inflect.plural 'Tipo de multa', 'Tipos de multas'
+  inflect.singular 'Tipos de multas', 'Tipo de multas'
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'
 #   inflect.irregular 'person', 'people'

@@ -7,7 +7,7 @@
     <%= f.label :contribution_type %>:
     <% all_types = ContributionType.all.collect {|t| [ t.name, t.id ] } %>
     <%= f.select :contribution_type_id, all_types %>
-    <% str = t('tert.new_x', :model => ContributionType.model_name.human) %>
+    <% str = t('tert.new_x.male', :model => ContributionType.model_name.human) %>
     <%= link_to str, new_contribution_type_path(:event_id => params[:id]), :class => 'add' %>
   </div>
   <div class="actions">

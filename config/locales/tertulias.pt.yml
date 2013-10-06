@@ -24,6 +24,7 @@ pt:
       contribution_type:
         name: Nome
         colour: Cor
+        colour_hex: Cor (código hexadecimal)
       contribution:
         name: Nome
         contribution_type: Tipo de multa
@@ -37,7 +38,9 @@ pt:
     add: adicionar
     Add: Adicionar
     add_x: Adicionar %{model}
-    new_x: Novo %{model}
+    new_x:
+      male: Novo %{model}
+      female: Nova %{model}
     Create: Criar
     AdminsOnly: 'Esta área é reservada a admins.'
     model_errors:
@@ -56,6 +59,7 @@ pt:
       CancelFailed: Erro ao cancelar convidado.
   Back: Voltar
   Edit: Editar
+  edit: editar
   Edit_x: 'Editar %{model}'
   sign_in: iniciar sessão
   sign_up: inscrever-se

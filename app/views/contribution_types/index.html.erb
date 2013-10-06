@@ -1,14 +1,13 @@
-<h1><%= ContributionType.model_name.human(:count => 2) %></h1>
+<h2><%= pluralize @contribution_types.count, ContributionType.model_name.human %>:</h2>
 
 <ul>
   <% @contribution_types.each do |type| %>
-    <li><span style="background-color: <%= type.colour %>"><%= type.name %></span>
+    <li>
+    	<%= link_to type.name, edit_contribution_type_path(type),
+    			class: :edit, style: "background-color: #{type.colour}" %>
   <% end %>
 </ul>
 
-<ul class="options">
-  <li><%= link_to t('tert.add_x', :model => ContributionType.model_name.human),
-  			new_contribution_type_path, class: 'add' %>
-</ul>
+<h3><%= t 'tert.new_x.male', model: ContributionType.model_name.human %></h3>
 
-<%= link_to t('Back'), :root %>
+<%= render 'form' %>
