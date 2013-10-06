@@ -1,24 +1,14 @@
-<p>
-  <b><%= Event.human_attribute_name 'when' %>:</b>
-  <%= l @event.when, format: :long %>
-</p>
-
-<p>
-  <b><%= Event.human_attribute_name 'location' %>:</b>
-  <%= @event.location %>
-</p>
-
-<p>
-  <b><%= Event.human_attribute_name 'owner' %>:</b>
-  <%= @event.owner.name %>
-</p>
+<h2><%= @event.name %></h2>
 
 <% if @event.description.present? %>
-<p>
-  <b><%= Event.human_attribute_name 'description' %>:</b>
-  <div class="description"><%= @event.description %></div>
-</p>
+<p class="description"><%= @event.description %></p>
 <% end %>
+
+<p>
+  <b><%= Event.human_attribute_name 'when' %>:</b> <%= l @event.when, format: :long %> <br />
+  <b><%= Event.human_attribute_name 'location' %>:</b> <%= @event.location %> <br />
+  <b><%= Event.human_attribute_name 'owner' %>:</b> <%= @event.owner.name %>
+</p>
 
 <% if @event.belongs_to? current_user %>
 <ul class='options'>

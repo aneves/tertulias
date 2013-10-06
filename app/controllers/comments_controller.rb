@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
     @comment.user = current_user
+    @event = Event.find(params[:event_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -17,7 +18,8 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     @comment.user = current_user
-    @comment.event_id = params[:event_id]
+    @event = Event.find params[:event_id]
+    @comment.event = @event
 
     respond_to do |format|
       if @comment.save
@@ -25,6 +27,8 @@ class CommentsController < ApplicationController
         format.html { redirect_to @comment.event, notice: msg }
         format.json { render json: @comment, status: :created, location: @comment }
       else
+        @comment.event_id = params[:event_id]
+        @event = Event.find params[:event_id]
         format.html {
           @comments = Comment.latest
           render action: "new"

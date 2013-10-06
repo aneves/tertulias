@@ -1,5 +1,5 @@
-<h1>New contribution</h1>
+<h2><%= t 'tert.new_x', :model => Contribution.model_name.human %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', contributions_path %>
+<%= link_to t('Back'), event_path(@event) %>

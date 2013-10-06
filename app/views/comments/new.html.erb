@@ -1,7 +1,5 @@
-<h1>Add comment</h1>
+<h2><%= t 'tert.new_x', :model => Comment.model_name.human %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', @event %>
-
-<%= render :partial => "comments/list", :locals => {:comments => @comments} %>
+<%= link_to t('Back'), event_path(@event) %>

@@ -47,6 +47,7 @@ class GuestsController < ApplicationController
   def new
     @guest = Guest.new
     @guest.user = current_user
+    @event = Event.find(params[:event_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -60,6 +61,7 @@ class GuestsController < ApplicationController
     @guest = Guest.new(params[:guest])
 	  @guest.user = current_user
     @guest.event_id = params[:event_id]
+    @event = Event.find(params[:event_id])
 
     respond_to do |format|
       if @guest.save

@@ -1,5 +1,5 @@
-<h2>New guest</h2>
+<h2><%= t 'tert.new_x', :model => Guest.model_name.human %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', guests_path %>
+<%= link_to t('Back'), event_path(@event) %>

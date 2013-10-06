@@ -47,6 +47,7 @@ class ContributionsController < ApplicationController
   def new
     @contribution = Contribution.new
     @contribution.user = current_user
+    @event = Event.find params[:event_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -72,6 +73,7 @@ class ContributionsController < ApplicationController
         format.html { redirect_to @contribution.event, notice: msg }
         format.json { render json: @contribution, status: :created, location: @contribution }
       else
+        @event = Event.find params[:event_id]
         format.html { render action: "new" }
         format.json { render json: @contribution.errors, status: :unprocessable_entity }
       end

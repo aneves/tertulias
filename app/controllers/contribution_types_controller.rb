@@ -1,4 +1,13 @@
 class ContributionTypesController < ApplicationController
+  def index
+    @contribution_types = ContributionType.all
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @contribution_types }
+    end
+  end
+
   # GET /contributions/new
   # GET /contributions/new.json
   def new
@@ -18,7 +27,7 @@ class ContributionTypesController < ApplicationController
     respond_to do |format|
       if @contribution_type.save
         msg = t('created_x.male', model: ContributionType.model_name.human)
-        format.html { redirect_to event_path(params[:event_id]), notice: msg }
+        format.html { redirect_to contributions_path, notice: msg }
         format.json { render json: @contribution_type, status: :created, location: @contribution_type }
       else
         format.html { render action: "new" }

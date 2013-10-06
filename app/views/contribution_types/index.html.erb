@@ -1,0 +1,14 @@
+<h1><%= ContributionType.model_name.human(:count => 2) %></h1>
+
+<ul>
+  <% @contribution_types.each do |type| %>
+    <li><span style="background-color: <%= type.colour %>"><%= type.name %></span>
+  <% end %>
+</ul>
+
+<ul class="options">
+  <li><%= link_to t('tert.add_x', :model => ContributionType.model_name.human),
+  			new_contribution_type_path, class: 'add' %>
+</ul>
+
+<%= link_to t('Back'), :root %>

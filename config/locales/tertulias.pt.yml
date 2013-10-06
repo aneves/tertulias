@@ -7,7 +7,9 @@ pt:
       event: Evento
       guest: Convidado
       contribution: Multa
-      contribution_type: Tipo de multa
+      contribution_type:
+        one: Tipo de multa
+        other: Tipos de multa
       comment: Comentário
     attributes:
       event:
@@ -65,6 +67,7 @@ pt:
   updated_x: '%{model} foi atualizado com sucesso.'
   'true': sim
   'false': não
+  manage: gerir
 #  examples:
 #    messages:
 #      not_saved:

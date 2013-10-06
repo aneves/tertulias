@@ -13,15 +13,4 @@
 <% end %>
 </ul>
 
-<section class="collapsable collapsed">
-  <h3><%= t 'tert.add_x', :model => Guest.model_name.human%></h3>
-  <%= form_for([@event, @new_guest]) do |f| %>
-    <div class="field">
-      <%= f.label :name %>:
-      <%= f.text_field :name %>
-    </div>
-    <div class="actions">
-      <%= f.submit t('tert.add') %>
-    </div>
-  <% end %>
-</section>
+<%= link_to t('tert.add_x', :model => Guest.model_name.human), new_event_guest_path(@event), class: 'add' %>

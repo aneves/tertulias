@@ -26,7 +26,4 @@
 	</tbody>
 </table>
 
-<section class="collapsable collapsed">
-  <h3><%= t 'tert.add_x', :model => Contribution.model_name.human%></h3>
-  <%= render :partial => "contributions/mini_form" %>
-</section>
+<%= link_to t('tert.add_x', :model => Contribution.model_name.human), new_event_contribution_path(@event), class: 'add' %>

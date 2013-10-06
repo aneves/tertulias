@@ -1,4 +1,4 @@
-<%= form_for(@contribution) do |f| %>
+<%= form_for([@event, @contribution]) do |f| %>
   <% if @contribution.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contribution.errors.count, "error") %> prohibited this contribution from being saved:</h2>
@@ -19,6 +19,7 @@
     <%= f.label :contribution_type %><br />
     <% all_types = ContributionType.all.collect {|t| [ t.name, t.id ] } %>
     <%= f.select :contribution_type_id, all_types %>
+    <%= link_to t('manage'), contribution_types_path, class: :edit %>
   </div>
   <div class="actions">
     <%= f.submit %>
