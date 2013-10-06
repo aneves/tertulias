@@ -1,0 +1,8 @@
+<h1><%= t 'Edit_x', model: @contribution_type.class.model_name.human %></h1>
+
+<%= render 'form' %>
+
+<% # TODO: make all these links to :root go back to the PREVIOUSLY SELECTED event instead!! %>
+<ul class="options">
+  <li><%= link_to t('Back'), contribution_types_path %>
+</ul>

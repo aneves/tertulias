@@ -9,6 +9,7 @@
 //= require_tree .
 
 $(document).ready(function () {
+	$("#contributions table").addClass("tablesorter").tablesorter();
 	$('.collapsable>*:first-child').on('click', function() {
 		$(this).parent().toggleClass('collapsed');
 	});
