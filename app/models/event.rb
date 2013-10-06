@@ -9,6 +9,10 @@ class Event < ActiveRecord::Base
   validates_presence_of :when
   validates_presence_of :location
 
+  def future?
+    return self.when > Date.today
+  end
+
   def belongs_to? someone
     return true if owner == nil
     return false if someone == nil

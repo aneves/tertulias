@@ -5,7 +5,10 @@
 <% end %>
 
 <p>
-  <b><%= Event.human_attribute_name 'when' %>:</b> <%= l @event.when, format: :long %> <br />
+  <b><%= Event.human_attribute_name 'when' %>:</b>
+  	<span class='event <%= @event.future? ? "future" : "past" %>'>
+  		<%= l @event.when, format: :long %>
+  	</span> <br />
   <b><%= Event.human_attribute_name 'location' %>:</b> <%= @event.location %> <br />
   <b><%= Event.human_attribute_name 'owner' %>:</b> <%= @event.owner.name %>
 </p>

@@ -26,7 +26,7 @@
 		<ul>
 			<% id = params[:id].to_i
 				Event.all.sort_by(&:when).reverse.each do |e| %>
-				<li<%= " class='selected'" if e.id == id %>>
+				<li class='<%= "selected" if e.id == id %><%= " future" if e.future? %>'>
 					<%= link_to e.name, e, title: l(e.when, format: :long) %>
 			<% end %>
 			<li><%= link_to t('tert.add_x', :model => Event.model_name.human), new_event_path, class: :add %>

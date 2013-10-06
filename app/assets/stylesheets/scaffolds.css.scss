@@ -83,10 +83,24 @@ nav>ul {
       display: inline-block;
     }
     display: inline-block;
-    border: solid 1px transparent;
     &.selected {
-      border-color: grey;
+      border: solid 1px grey;
     }
+    &.future {
+      background-color: #DFF2BF;
+      border-color: #4F8A10;
+    }
+  }
+}
+.event {
+  padding: 1px 3px;
+  &.future {
+    background-color: #DFF2BF;
+    border: solid 1px #4F8A10;
+  }
+  &.past {
+    background-color: #F0F0EE;
+    border: solid 1px #D3DBC5;
   }
 }
 
