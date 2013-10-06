@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
     @guests = @event.guests
     @contributions = @event.contributions
-    @comments = @event.comments
+    @comments = @event.comments.sort_by(&:created_at).reverse
     @new_comment = Comment.new
     @new_guest = Guest.new
     @new_contribution = Contribution.new
