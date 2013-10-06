@@ -1,15 +1,4 @@
 class EventsController < ApplicationController
-  # GET /events
-  # GET /events.json
-  def index
-    @events = Event.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @events }
-    end
-  end
-
   def next
     # TODO/FIXME: use Event.where(["when >= ?", DateTime.now]).first
     # SQLite seems to be exploding whenever I try to select this column.

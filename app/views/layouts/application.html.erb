@@ -25,9 +25,9 @@
 	<%= t "tert.Existing_events" %>
 		<ul>
 			<% id = params[:id].to_i
-				Event.all.each do |e| %>
+				Event.all.sort_by(&:when).reverse.each do |e| %>
 				<li<%= " class='selected'" if e.id == id %>>
-					<%= link_to e.name, e %>
+					<%= link_to e.name, e, title: l(e.when, format: :long) %>
 			<% end %>
 			<li><%= link_to t('tert.add_x', :model => Event.model_name.human), new_event_path, class: :add %>
 		</ul>
