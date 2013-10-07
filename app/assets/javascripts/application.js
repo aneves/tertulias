@@ -13,4 +13,6 @@ $(document).ready(function () {
 	$('.collapsable>*:first-child').on('click', function() {
 		$(this).parent().toggleClass('collapsed');
 	});
+	// TODO: No browser supports this yet. But we should check with Modernizr either way.
+	$('input[type=datetime]').datetimepicker();
 });

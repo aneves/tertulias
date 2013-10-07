@@ -45,3 +45,9 @@ a.edit::before {
     content: url("/assets/pencil.png");
     margin-right: 3px;
 }
+input[type=datetime] {
+    background: url(/assets/calendar_view_day.png) center right no-repeat;
+}
+.ui-datepicker .ui-widget-content {
+    background: #999 none;
+}
