@@ -11,6 +11,7 @@ pt:
         one: Tipo de multa
         other: Tipos de multa
       comment: Comentário
+      user: Utilizador
     attributes:
       event:
         name: Nome
@@ -33,6 +34,12 @@ pt:
         name: Nome
         coming: Vem
         user: Pessoa
+      user:
+        email: E-mail
+        password: Chave
+        password_confirmation: Confirmação da chave
+        name: Nome
+        remember_me: Lembrar
   tert:
     title: Tertúlias
     add: adicionar
@@ -75,6 +82,12 @@ pt:
   'true': sim
   'false': não
   manage: gerir
+  sign_in: Autenticar-se
+  sign_up: Registar-se
+  forgot_pass: Esqueceu-se da sua chave?
+  no_confirmation: Não recebeu instruções de confirmação?
+  no_unlock: Não recebeu instruções de destrancar?
+  sign_in_with: "Autenticar-se com %{provider}"
 #  examples:
 #    messages:
 #      not_saved:

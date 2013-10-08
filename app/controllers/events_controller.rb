@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   def next
     # TODO/FIXME: use Event.where(["when >= ?", DateTime.now]).first
     # SQLite seems to be exploding whenever I try to select this column.
-    event = Event.first
+    event = Event.last
     if event != nil
       then redirect_to event
     else redirect_to new_event_path
