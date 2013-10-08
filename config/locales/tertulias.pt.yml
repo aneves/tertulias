@@ -67,6 +67,9 @@ pt:
     ConfirmDelete_x:
       male: Tem a certeza que deseja cancelar este %{model}?
       female: Tem a certeza que deseja cancelar esta %{model}?
+    alreadyAdmin: Já é administrador.
+    adminsExist: Já existem administradores.
+    usurpedAdmin: Usurpou o trono vazio de administrador!
   Back: Voltar
   Edit: Editar
   edit: editar
