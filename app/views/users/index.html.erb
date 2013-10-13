@@ -11,7 +11,14 @@
 		<tr>
 			<td><%= user.name %></td>
 			<td><%= user.email %></td>
-			<td<%= " class='highlight'" if user.admin? %>><%= t user.admin?.to_s %></td>
+			<td<%= " class='highlight'" if user.admin? %>>
+				<%= t user.admin?.to_s %>
+				<%=
+				  user.admin? ?
+				    link_to(image_tag('cancel.png', title: t('tert.revokeAdmin')), make_normal_user_path(user))
+				  : link_to(image_tag('accept.png', title: t('tert.grantAdmin')), make_admin_user_path(user))
+				%>
+			</td>
 		</tr>
 	<% end %>
 	</tbody>

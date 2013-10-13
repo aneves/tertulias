@@ -3,10 +3,10 @@
 # Add new inflection rules using the following format
 # (all these examples are active by default):
 ActiveSupport::Inflector.inflections do |inflect|
-  inflect.plural /a$/, 'as'
-  inflect.singular /as$/, 'a'
-  inflect.plural 'Tipo de multa', 'Tipos de multas'
-  inflect.singular 'Tipos de multas', 'Tipo de multas'
+  inflect.plural 'ulta$', 'ultas'
+  inflect.singular 'ultas$', 'ultas'
+  inflect.plural 'Utilizador', 'Utilizadores'
+  inflect.singular 'Utilizadores', 'Utilizador'
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'
 #   inflect.irregular 'person', 'people'

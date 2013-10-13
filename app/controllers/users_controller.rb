@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_filter :admins_only!, except: :usurp_admin
 
   # GET /users
   def index
@@ -11,14 +10,46 @@ class UsersController < ApplicationController
     end
   end
 
+  def make_admin
+    user = User.find params[:id]
+    if user.admin?
+    then
+      redirect_to users_path, notice: t('tert.alreadyAdmin')
+      return
+    end
+
+    user.admin = true
+    user.save!
+    redirect_to users_path, notice: t("tert.madeAdmin")
+  end
+
+  def make_normal
+    user = User.find params[:id]
+    if current_user.id == user.id
+      redirect_to users_path, notice: t('tert.cannotRemoveAdminFromSelf')
+      return
+    end
+
+    if !user.admin?
+    then
+      redirect_to users_path, notice: t('tert.alreadyNormalUser')
+      return
+    end
+
+    user.admin = false
+    user.save!
+    redirect_to users_path, notice: t("tert.removedAdmin")
+  end
+
   def usurp_admin
-    if  current_user.admin?
-    then redirect_to users_path, notice: t('tert.alreadyAdmin')
-         return
+    if current_user.admin?
+    then
+      redirect_to users_path, notice: t('tert.alreadyAdmin')
+      return
     end
 
     admins = User.where(admin: true)
-    if  admins.any?
+    if admins.any?
          redirect_to (Event.last || new_event_path), notice: t("tert.adminsExist")
          return
     end

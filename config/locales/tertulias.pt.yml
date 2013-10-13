@@ -68,8 +68,14 @@ pt:
       male: Tem a certeza que deseja cancelar este %{model}?
       female: Tem a certeza que deseja cancelar esta %{model}?
     alreadyAdmin: Já é administrador.
+    alreadyNormalUser: Já é um utilizador normal.
     adminsExist: Já existem administradores.
     usurpedAdmin: Usurpou o trono vazio de administrador!
+    madeAdmin: Utilizador tornado administrador.
+    removedAdmin: Permissões de administrador removidas.
+    cannotRemoveAdminFromSelf: Não pode remover permissões de administrador de si próprio.
+    grantAdmin: tornar administrador
+    revokeAdmin: cancelar direitos de administrador
   Back: Voltar
   Edit: Editar
   edit: editar
@@ -85,6 +91,7 @@ pt:
   'true': sim
   'false': não
   manage: gerir
+  admin: Administração
   sign_in: Autenticar-se
   sign_up: Registar-se
   forgot_pass: Esqueceu-se da sua chave?
