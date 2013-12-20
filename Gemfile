@@ -8,6 +8,7 @@ gem 'rails', '3.1.3'
 gem 'pg'
 
 gem 'devise' # for login
+gem 'mailcatcher' # for development (run 'mailcatcher' in console)
 
 
 # Gems used only for assets and not required
