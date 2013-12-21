@@ -213,4 +213,7 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
+
+  config.validate_on_invite = true
+  config.invite_key = {:email => Devise.email_regexp, :name => /.+/}
 end

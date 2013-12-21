@@ -1,0 +1,17 @@
+pt:
+  devise:
+    invitations:
+      send_instructions: 'Um email de convite foi enviado para %{email}.'
+      invitation_token_invalid: 'A chave de convite fornecida não é válida!'
+      updated: 'A sua palavra-passe foi guardada com sucesso. Está autenticada.'
+      no_invitations_remaining: "Nenhum convite sobra"
+      invitation_removed: 'O convite foi removido.'
+      new:
+        header: "Enviar convite"
+        submit_button: "Enviar convite"
+      edit:
+        header: "Escolher palavra-passe"
+        submit_button: "Escolher palavra-passe"
+    mailer:
+      invitation_instructions:
+        subject: 'Instruções de convite'

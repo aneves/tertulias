@@ -1,0 +1,11 @@
+<p>Olá, <em><%= @resource.name %></em>!</p>
+
+<p>Isto é um convite para <%= root_url %>, que pode ser aceite seguindo a ligação abaixo.</p>
+
+<p><%= link_to(
+		t('tert.Accept_invitation'),
+		accept_invitation_url(@resource, :invitation_token => @resource.invitation_token)
+		) %></p>
+
+<p>Se não quiser aceitar o convite, basta ignorar este email.<br />
+A sua conta só será criada quando aceder à ligação acima e escolher uma palavra-passe.</p>

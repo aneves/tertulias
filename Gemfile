@@ -7,7 +7,8 @@ gem 'rails', '3.1.3'
 
 gem 'pg'
 
-gem 'devise' # for login
+gem 'devise',           '>= 2.0.0' # for login
+gem 'devise_invitable', '~> 1.1.0'
 gem 'mailcatcher' # for development (run 'mailcatcher' in console)
 
 

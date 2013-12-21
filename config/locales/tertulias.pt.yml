@@ -45,6 +45,8 @@ pt:
     add: adicionar
     Add: Adicionar
     add_x: Adicionar %{model}
+    Invite: Convidar
+    Accept_invitation: Aceitar convite
     new_x:
       male: Novo %{model}
       female: Nova %{model}

@@ -11,10 +11,10 @@
 <ul id="menu" class="options">
 	<% if user_signed_in? %>
 		<li><%= current_user.name %> <%= link_to t(:sign_out), destroy_user_session_path, :method => :delete %>
-		<li><%= link_to t(:admin), user_registration_path if current_user.admin? %>
+		<li><%= link_to t(:admin), users_path if current_user.admin? %>
 	<% else %>
 		<li><%= link_to t(:sign_in), new_user_session_path %>
-		<li><%= link_to t(:sign_up), new_user_registration_path %>
+		<li><%= link_to t(:sign_up), new_user_path %>
 	<% end %>
 </ul>
 
